@@ -14,9 +14,15 @@ def print_menu():
     [6] - exit
     """)
 
-def search(db, name):
-    for db in my_items:
-        print(db)
+def search_item(db):
+    name = input("Zadej jméno knížky, kterou chceš vyhledat: ")
+    #to do vylepšit podle hledání knížky nebo autora
+
+    for item in db:
+        if item["name"] == name:
+            return True
+
+    return False
 
 def add_item(db):
     name = input("Zadej jméno knížky: ")
@@ -60,8 +66,7 @@ def run():
             print_items(db)
 
         elif user_choice == 2:
-            #print(search(db, "harry potter"))
-            pass
+            search_item(db)
 
         elif user_choice == 3:
             add_item(db)
