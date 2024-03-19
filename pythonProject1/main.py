@@ -3,7 +3,14 @@ print("Hello world")
 
 
 def print_menu():
-    pass
+    print("""
+    [1] - vypiš položky
+    [2] - vyhledej položky
+    [3] - přidej položky
+    [4] - smaž položky
+    [5] - nahrad položky
+    [6] - exit
+    """)
 
 def search():
     pass
@@ -55,7 +62,7 @@ def run():
             pass
 
         elif user_choice == 6:
-            pass
+            break
 
         else:
             print("zadal jsi špatnou hodnotu")
