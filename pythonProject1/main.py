@@ -19,7 +19,7 @@ def search(db, name):
 def add_item():
     pass
 
-def print_item(db):
+def print_items(db):
     print("Aktuální seznam knížek")
     for item in db:
         print(f"Jméno: {item['name']}, autor: {item['author']}")
@@ -32,7 +32,7 @@ def replace_item():
     pass
 
 def get_input():
-    input("Zadej hodnotu výběru: ")
+    return int(input("Zadej hodnotu výběru: "))
 
 
 def run():
@@ -52,7 +52,7 @@ def run():
         user_choice = get_input()
 
         if user_choice == 1:
-            print_item(db)
+            print_items(db)
 
         elif user_choice == 2:
             #print(search(db, "harry potter"))
