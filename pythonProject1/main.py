@@ -18,11 +18,11 @@ def search_item(db):
     name = input("Zadej jméno knížky, kterou chceš vyhledat: ")
     #to do vylepšit podle hledání knížky nebo autora
 
-    for item in db:
-        if item["name"] == name:
-            return True
+    for i in range(len(db)):
+        if db[i]["name"] == name:
+            return
 
-    return False
+    return None
 
 def add_item(db):
     name = input("Zadej jméno knížky: ")
@@ -36,8 +36,16 @@ def print_items(db):
         print(f"Jméno: {item['name']}, autor: {item['author']}")
     print("----------------------------")
     print()
+
+
 def delete_item():
-    pass
+    name = input("Zadej nazev knihy, kterou chceš smazat: ")
+
+    for i in range(len(db)):
+        if db[i]["name"] == name:
+            del db[i]
+            return True
+    return False
 
 def replace_item():
     pass
@@ -72,7 +80,7 @@ def run():
             add_item(db)
 
         elif user_choice == 4:
-            pass
+            delete_item(db)
 
         elif user_choice == 5:
             pass
