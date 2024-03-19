@@ -1,3 +1,5 @@
+#codeium
+
 print("Hello world")
 # příkaz git pull stáhnu doma na PC
 
@@ -16,8 +18,11 @@ def search(db, name):
     for db in my_items:
         print(db)
 
-def add_item():
-    pass
+def add_item(db):
+    name = input("Zadej jméno knížky: ")
+    author = input("Zadej jméno autora: ")
+
+    db.append({"name": name, "author": author})
 
 def print_items(db):
     print("Aktuální seznam knížek")
@@ -59,7 +64,7 @@ def run():
             pass
 
         elif user_choice == 3:
-            pass
+            add_item(db)
 
         elif user_choice == 4:
             pass
@@ -74,3 +79,4 @@ def run():
             print("Zadal jsi špatnou hodnotu. Zadej ji znovu")
 
 run()
+print("Děkuji")
