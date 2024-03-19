@@ -12,15 +12,19 @@ def print_menu():
     [6] - exit
     """)
 
-def search():
-    pass
+def search(db, name):
+    for db in my_items:
+        print(db)
 
 def add_item():
     pass
 
-def print_item():
-    pass
-
+def print_item(db):
+    print("Aktuální seznam knížek")
+    for item in db:
+        print(f"Jméno: {item['name']}, autor: {item['author']}")
+    print("----------------------------")
+    print()
 def delete_item():
     pass
 
@@ -28,7 +32,8 @@ def replace_item():
     pass
 
 def get_input():
-    pass
+    input("Zadej hodnotu výběru: ")
+
 
 def run():
     # seznam se slovníkem
@@ -47,9 +52,10 @@ def run():
         user_choice = get_input()
 
         if user_choice == 1:
-            pass
+            print_item(db)
 
         elif user_choice == 2:
+            #print(search(db, "harry potter"))
             pass
 
         elif user_choice == 3:
@@ -65,6 +71,6 @@ def run():
             break
 
         else:
-            print("zadal jsi špatnou hodnotu")
+            print("Zadal jsi špatnou hodnotu. Zadej ji znovu")
 
 run()
