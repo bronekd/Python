@@ -48,7 +48,19 @@ def delete_item():
     return False
 
 def replace_item():
-    pass
+    name = input("Zadej název knihy, kterou chceš updatnout: ")
+    # Vylepšení o různé update, name, autor, .....
+    update_index = None
+    for i in range(len(db)):
+        if db[i]["name"] == name:
+            update_index = i
+
+    if update_index is None:
+        print("kniha se nenašla")
+        return False
+
+    autor = input("Zadej jméno autora: ")
+    db[update_index]["autor"] = autor
 
 def get_input():
     return int(input("Zadej hodnotu výběru: "))
